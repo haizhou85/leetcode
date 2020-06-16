@@ -9,15 +9,15 @@
 # end
 # @param {TreeNode} root
 # @return {Integer[]}
-def preorder_traversal(root)
+def postorder_traversal(root)
     return [] if !root
     stack = [root]
     ans = []
     while stack.any?
         root = stack.pop()
         ans << root.val
-        stack << root.right if root.right
         stack << root.left if root.left
+        stack << root.right if root.right
     end
-    ans           
+    ans.reverse()
 end
